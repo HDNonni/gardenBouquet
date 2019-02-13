@@ -1,0 +1,43 @@
+[{
+    "type": "aster",
+    "lifecycle": "perenniel",
+    "color": ["white", "red", "pink", "purple"],
+    "matureHeight": ["8inches", "12inches", "18inches", "taller"],
+    "zone": [4,5,6,7,8],
+    "bloomTime": ["summer", "fall"],
+    "exposure":"full to part sun",
+    "imageURL": "aster-purple.jpeg",
+    "imageAlt": "aster-purple",
+    "imageTitle": "Purple Aster",
+    "infoLink": "https://www.americanmeadows.com/perennials/aster/all-about-aster"
+},
+{
+
+    "type": "Coneflowers (Echinacea)",
+    "lifecycle": "perenniel",
+    "color": ["white", "red", "pink", "purple", "yellow", "orange"],
+    "matureHeight": [ "18inches", "24inches", "36inches"],
+    "zone": [5,6,7,8],
+    "bloomTime": ["summer", "fall"],
+    "exposure":"full to part sun",
+    "imageURL": "coneflower-multi.jpeg",
+    "imageAlt": "coneflower",
+    "imageTitle": "Coneflowers",
+    "infoLink": "https://www.thespruce.com/echinacea-purple-coneflowers-1402840"
+},
+{
+    "type": "daylily",
+    "lifecycle": "perenniel",
+    "color": ["yellow", "red", "pink", "orange"],
+    "matureHeight": ["12inches", "18inches", "taller"],
+    "zone": [2,3,4,5,6,7,8,9],
+    "bloomTime": "summer",
+    "exposure":"full to part sun",
+    "imageURL": "daylilly.jpeg",
+    "imageAlt": "daylilly",
+    "imageTitle": "Daylillies",
+    "infoLink": "https://www.daylilygarden.com/garden-plants/daylilies/flowers/daylily-colors.html"
+
+}]
+
+

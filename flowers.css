@@ -18,6 +18,9 @@ html body{
 .buttonBack{
     background-color:rgba(235, 235, 189, 0.979);
 }
+#button{
+    /* background-color: purple; */
+}
 #flowerHeading{
     padding-left:50px;
     color: purple
@@ -56,5 +59,46 @@ html body{
    margin-top:-30px;
 }
 .paragraphStyle{
+    color:lightgreen;
+    font-size: 25px;
+    text-align:center;
+}
+.list-group li:first-child{
     color:white;
+    font-size:20px;
+}
+.noMatch{
+    color:purple;
+    font-size: 45px;
+    font-weight:bold;
+    text-align: center;
+    margin-top: 350px;
+    background-color:lightyellow;
+}
+#flowerContainer{
+    margin-top:30px;
+    margin-bottom:10px;
+    font-size:25px;
+}
+.resetForm{
+    margin-left: 100px;
+    margin-right:100px;
+    padding:0 10px 0 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.buttonContainer{
+    background-color: lightyellow;
+    border-radius: 5px;
+    padding: 10px 0 10px 0;
+    position: absolute;
+    bottom:5px;
+}
+.inputContainer{
+    background-color: lightyellow;
+    border-radius: 5px;
+    padding: 10px 0 10px 0;
+    position: absolute;
+    bottom:65px;
 }

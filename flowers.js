@@ -36,7 +36,7 @@ let plantList = [{
     "imageURL": "daylilly.jpeg",
     "imageAlt": "daylilly",
     "imageTitle": "Daylillies",
-    "infoLink": "https://www.daylilygarden.com/garden-plants/daylilies/flowers/daylily-colors.html"
+    "infoLink": "https://www.daylilygarden.com/garden-plants/daylilies/flowers/daylily-colors.html target = blank"
 
 }]
 // if (plantList.color == "white" || "red"){
@@ -103,51 +103,82 @@ $(function () {
         let exposure = flowerExposurePick(newExposureArray);
         let cycle = flowerCyclePick(newCycleArray);
         console.log("colors:", colors);
-        //create an array to count the number of time a flower mathces the filter
+        //create an array to count the number of time a flower matches the filter
         let countOfMatches = new Array(plantList.length);
         //loop thru array to inialize the value to 0
-        for (let i = 0 ; i < countOfMatches.length; i++){
+        for (let i = 0; i < countOfMatches.length; i++) {
             //set each one to 0
             countOfMatches[i] = 0;
         }
-        for (let i = 0 ; i < colors.length; i++){
-            if (colors[i] == true){
+        //loop thru each attribute
+        for (let i = 0; i < colors.length; i++) {
+            if (colors[i] == true) {
                 countOfMatches[i]++;
             }
         }
-        for (let i = 0 ; i < height.length; i++){
-            if (height[i] == true){
+        for (let i = 0; i < height.length; i++) {
+            if (height[i] == true) {
                 countOfMatches[i]++;
             }
         }
-        for (let i = 0 ; i < bloom.length; i++){
-            if (bloom[i] == true){
+        for (let i = 0; i < bloom.length; i++) {
+            if (bloom[i] == true) {
                 countOfMatches[i]++;
             }
         }
-        for (let i = 0 ; i < exposure.length; i++){
-            if (exposure[i] == true){
+        for (let i = 0; i < exposure.length; i++) {
+            if (exposure[i] == true) {
                 countOfMatches[i]++;
             }
         }
-        for (let i = 0 ; i < cycle.length; i++){
-            if (cycle[i] == true){
+        for (let i = 0; i < cycle.length; i++) {
+            if (cycle[i] == true) {
                 countOfMatches[i]++;
             }
         }
 
         console.log("count", countOfMatches);
 
-        for(let i = 0; i < countOfMatches.length;i++){
-            if(countOfMatches[i] >= 3){
+        let matches = false;
+        //if matches = at least 3 show pic and infoLink
+        for (let i = 0; i < countOfMatches.length; i++) {
+            if (countOfMatches[i] >= 3) {
                 console.log(plantList[i].type);
+                console.log(plantList[i].imageURL);
+                matches = true;
+                $(".bodyBack").css("backgroundImage", "none");
+                $(".bodyBack").css("backgroundColor", "lightYellow");
+                $('#flowerContainer').append(`
+<div>
+        <div class = "name">
+                    <img src = "${plantList[i].imageURL}" title = "${plantList[i].imageTitle}" alt = "${plantList.imageAlt}" />
+                    <span><a href = "${plantList[i].infoLink}" target = "blank">${plantList[i].type}</a></span>
+</div>
+`);
             }
         }
 
-//to clear checkboxes
-        // $("input:checkbox").prop("checked", false);
+        if(matches == false){            
+            $(".noMatch").text("Sorry no matches,try again!")
+        }
     });
 });
+$(function () {
+    $("#resetButton").click(function () {
+        //to clear checkboxes
+        $("input:checkbox").prop("checked", false);
+        //$("#flowerContainer").reset();
+        //$("#flowerContainer"[type="reset"]);
+        //$(".name").prop(false);
+        //$("#flowerContainer:input").val("");
+        //$(".name"[type = "reset"]);
+        //$(".name").val(defaultValue);
+        $(".bodyBack").css("backgroundImage", "url('myBouquet.jpg')");
+        $(".bodyBack").css("backgroundColor", "none");
+        $("#flowerContainer").empty();
+        $(".noMatch").empty();
+    })
+})
 
 
 
@@ -166,10 +197,10 @@ function flowerColorPick(colorsToFilter) {
         let currentFlower = plantList[i];
         for (let j = 0; j < currentFlower.color.length; j++) {
             console.log(currentFlower.color[j]);
-            
+
             for (let k = 0; k < colorsToFilter.length; k++) {
                 if (colorsToFilter[k] === currentFlower.color[j]) {
-                    colorMatches[i]=true;
+                    colorMatches[i] = true;
                     console.log("The flower is: ", currentFlower.type);
                 } else {
                     console.log("Try Again!")
@@ -190,7 +221,7 @@ function flowerHeightPick(heightsToFilter) {
             console.log(currentFlower.matureHeight[j]);
             for (let k = 0; k < heightsToFilter.length; k++) {
                 if (heightsToFilter[k] === currentFlower.matureHeight[j]) {
-                    heightMatches[i]= true;
+                    heightMatches[i] = true;
                     console.log("The flower height is: ", currentFlower.type);
                 } else {
                     console.log("Try Again!")

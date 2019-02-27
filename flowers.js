@@ -1,44 +1,4 @@
-let plantList = [{
-    "type": "aster",
-    "lifecycle": "Perennial",
-    "color": ["white", "red", "pink", "purple"],
-    "matureHeight": ["8inches", "12inches", "18inches", "taller"],
-    "zone": [4, 5, 6, 7, 8],
-    "bloomTime": ["Summer", "Fall"],
-    "exposure": ["Full Sun", "Part Sun"],
-    "imageURL": "aster-purple.jpeg",
-    "imageAlt": "aster-purple",
-    "imageTitle": "Purple Aster",
-    "infoLink": "https://www.americanmeadows.com/perennials/aster/all-about-aster"
-},
-{
 
-    "type": "Coneflowers (Echinacea)",
-    "lifecycle": "Perennial",
-    "color": ["white", "red", "pink", "purple", "yellow", "orange"],
-    "matureHeight": ["18inches", "24inches", "36inches"],
-    "zone": [5, 6, 7, 8],
-    "bloomTime": ["Summer", "Fall"],
-    "exposure": ["Full Sun", "Part Sun"],
-    "imageURL": "coneflower-multi.jpeg",
-    "imageAlt": "coneflower",
-    "imageTitle": "Coneflowers",
-    "infoLink": "https://www.thespruce.com/echinacea-purple-coneflowers-1402840"
-},
-{
-    "type": "daylily",
-    "lifecycle": "Perennial",
-    "color": ["yellow", "red", "pink", "orange"],
-    "matureHeight": ["12inches", "18inches", "taller"],
-    "zone": [2, 3, 4, 5, 6, 7, 8, 9],
-    "bloomTime": ["Summer"],
-    "exposure": ["Full Sun", "Part Sun"],
-    "imageURL": "daylilly.jpeg",
-    "imageAlt": "daylilly",
-    "imageTitle": "Daylillies",
-    "infoLink": "https://www.daylilygarden.com/garden-plants/daylilies/flowers/daylily-colors.html target = blank"
-
-}]
 // if (plantList.color == "white" || "red"){
 //     console.log("correctColor");
 // }
@@ -98,7 +58,7 @@ $(function () {
 
 
         let colors = flowerColorPick(newColorArray);
-        let height = flowerHeightPick(newHeightArray);
+        let height = flowerPicks(newHeightArray);
         let bloom = flowerBloomPick(newBloomArray);
         let exposure = flowerExposurePick(newExposureArray);
         let cycle = flowerCyclePick(newCycleArray);
@@ -199,7 +159,7 @@ function flowerColorPick(colorsToFilter) {
             console.log(currentFlower.color[j]);
 
             for (let k = 0; k < colorsToFilter.length; k++) {
-                if (colorsToFilter[k] === currentFlower.color[j]) {
+                if (colorsToFilter[k].toLowerCase() === currentFlower.color[j].toLowerCase()) {
                     colorMatches[i] = true;
                     console.log("The flower is: ", currentFlower.type);
                 } else {
@@ -212,15 +172,15 @@ function flowerColorPick(colorsToFilter) {
     console.log(colorMatches);
 }
 
-function flowerHeightPick(heightsToFilter) {
+function flowerPicks(heightsToFilter) {
     let heightMatches = new Array(plantList.length);
     for (let i = 0; i < plantList.length; i++) {
         console.log(i);
         let currentFlower = plantList[i];
-        for (let j = 0; j < currentFlower.matureHeight.length; j++) {
-            console.log(currentFlower.matureHeight[j]);
+        for (let j = 0; j < currentFlower.['matureHeight'].length; j++) {
+            console.log(currentFlower.['matureHeight'][j]);
             for (let k = 0; k < heightsToFilter.length; k++) {
-                if (heightsToFilter[k] === currentFlower.matureHeight[j]) {
+                if (heightsToFilter[k].toLowerCase() === currentFlower.['matureHeight'][j].toLowerCase()) {
                     heightMatches[i] = true;
                     console.log("The flower height is: ", currentFlower.type);
                 } else {
@@ -240,7 +200,7 @@ function flowerBloomPick(bloomToFilter) {
         for (let j = 0; j < currentFlower.bloomTime.length; j++) {
             console.log(currentFlower.bloomTime[j]);
             for (let k = 0; k < bloomToFilter.length; k++) {
-                if (bloomToFilter[k] === currentFlower.bloomTime[j]) {
+                if (bloomToFilter[k].toLowerCase() === currentFlower.bloomTime[j].toLowerCase()) {
                     bloomMatches[i] = true;
                     console.log("The flower is bloom: ", currentFlower.type);
                 } else {
@@ -260,7 +220,7 @@ function flowerExposurePick(exposureToFilter) {
         for (let j = 0; j < currentFlower.exposure.length; j++) {
             console.log(currentFlower.exposure[j]);
             for (let k = 0; k < exposureToFilter.length; k++) {
-                if (exposureToFilter[k] === currentFlower.exposure[j]) {
+                if (exposureToFilter[k].toLowerCase()=== currentFlower.exposure[j].toLowerCase()) {
                     exposureMatches[i] = true;
                     console.log("The flower exposure is: ", currentFlower.type);
                 } else {
@@ -280,7 +240,7 @@ function flowerCyclePick(cycleToFilter) {
         let currentFlower = plantList[i];
 
         for (let k = 0; k < cycleToFilter.length; k++) {
-            if (cycleToFilter[k] === currentFlower.lifecycle) {
+            if (cycleToFilter[k].toLowerCase() === currentFlower.lifecycle.toLowerCase()) {
                 cycleMatches[i] = true;
                 console.log("The flower lifecycle is: ", currentFlower.type);
             } else {

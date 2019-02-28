@@ -1,6 +1,6 @@
 let plantList = [{
     "type": "Aster",
-    "lifecycle": "Perennial",
+    "lifecycle": ["Perennial"],
     "color": ["white", "red", "pink", "purple"],
     "matureHeight": ["8inches", "12inches", "18inches", "taller"],
     "zone": [4, 5, 6, 7, 8],
@@ -14,7 +14,7 @@ let plantList = [{
 {
 
     "type": "Coneflowers (Echinacea)",
-    "lifecycle": "Perennial",
+    "lifecycle": ["Perennial"],
     "color": ["white", "red", "pink", "purple", "yellow", "orange"],
     "matureHeight": ["18inches", "24inches", "36inches"],
     "zone": [5, 6, 7, 8],
@@ -27,7 +27,7 @@ let plantList = [{
 },
 {
     "type": "Daylily",
-    "lifecycle": "Perennial",
+    "lifecycle": ["Perennial"],
     "color": ["yellow", "red", "pink", "orange"],
     "matureHeight": ["12inches", "18inches", "taller"],
     "zone": [2, 3, 4, 5, 6, 7, 8, 9],
@@ -41,7 +41,7 @@ let plantList = [{
 },
 {
     "type": "Sunflower",
-    "lifecycle": "annual",
+    "lifecycle": ["annual"],
     "color": ["yellow","orange","red"],
     "matureHeight": ["taller"],
     "zone": [2, 3, 4, 5, 6, 7, 8, 9],
@@ -55,7 +55,7 @@ let plantList = [{
 },
 {
     "type": "Zinnia",
-    "lifecycle": "annual",
+    "lifecycle": ["annual"],
     "color": ["orange","pink","purple","red","white","yellow"],
     "matureHeight": ["8inches","12inches"],
     "zone": [5,6,7,8,9,10,11],
@@ -69,7 +69,7 @@ let plantList = [{
 },
 {
     "type": "Daffodils",
-    "lifecycle":"perenniel",
+    "lifecycle":["perenniel"],
     "color": ["yellow","orange","white"],
     "matureHeight": ["8inches","12inches"],
     "zone": [3,4,5,6,7,8,9],
@@ -83,7 +83,7 @@ let plantList = [{
 },
 {
     "type": "Cosmos",
-    "lifecycle": "annual",
+    "lifecycle": ["annual"],
     "color": ["orange","pink","white"],
     "matureHeight": ["12inches", "18inches", "taller"],
     "zone": [3,4,5,6,7,8,9],
@@ -97,7 +97,7 @@ let plantList = [{
 },
 {
     "type": "Chrysanthemum",
-    "lifecycle": "perenniel",
+    "lifecycle": ["perenniel"],
     "color": ["red","yellow","purple","orange"],
     "matureHeight": ["18inches","24inches","36inches"],
     "zone": [5,6,7,8,9],
@@ -111,7 +111,7 @@ let plantList = [{
 },
 {
     "type": "Peony",
-    "lifecycle": "perenniel",
+    "lifecycle": ["perenniel"],
     "color": ["pink","red","white","yellow"],
     "matureHeight": ["12inches","18inches","24inches","36inches"],
     "zone": [4,5,6,7,8,9],
@@ -126,7 +126,7 @@ let plantList = [{
 },
 // {
 //     "type": ""
-//     "lifecycle": ""
+//     "lifecycle": [""].
 //     "color": [],
 //     "matureHeight": [],
 //     "zone": [],
@@ -140,7 +140,7 @@ let plantList = [{
 // },
 // {
 //     "type": ""
-//     "lifecycle": ""
+//     "lifecycle": [""],
 //     "color": [],
 //     "matureHeight": [],
 //     "zone": [],
@@ -154,7 +154,7 @@ let plantList = [{
 // },
 // {
 //     "type": ""
-//     "lifecycle": ""
+//     "lifecycle": [""],
 //     "color": [],
 //     "matureHeight": [],
 //     "zone": [],

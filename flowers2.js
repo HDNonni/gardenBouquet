@@ -16,6 +16,25 @@ function inputGroup(ulId) {
     return newArray;
 }
 
+function flowerPicks(flowerToFilter, flowerCharacteristics) {
+    let flowerMatches = new Array(plantList.length);
+    for (let i = 0; i < plantList.length; i++) {
+        console.log(i);
+        let currentFlower = plantList[i];
+        for (let j = 0; j < currentFlower[flowerCharacteristics].length; j++) {
+            console.log(currentFlower[flowerCharacteristics][j]);
+            for (let k = 0; k < flowerToFilter.length; k++) {
+                if (flowerToFilter[k].toLowerCase() === currentFlower[flowerCharacteristics][j].toLowerCase()) {
+                    flowerMatches[i] = true;
+                    console.log("The flower height is: ", currentFlower.type);
+                } else {
+                    console.log("Try Again!")
+                }
+            }
+        }
+    };
+    return flowerMatches
+}
 
 
 
@@ -23,66 +42,23 @@ function inputGroup(ulId) {
 $(function () {
     $("#button").click(function () {
         console.log("clicked");
-        $("#colorGroup");
-        // add filters to new array when clicked
+        $(".noMatch").empty();
+        
+        // get the filter selected by the user
+        let newColorArray = inputGroup("#colorGroup");
+        let newHeightArray = inputGroup("#heightGroup");
+        let newBloomArray = inputGroup("#bloomGroup");
+        let newExposureArray = inputGroup("#exposureGroup");
+        let newCycleArray = inputGroup("#cycleGroup");
 
-        let newColorArray = inputGroup("#colorGroup")
-        // $("#colorGroup input[type=checkbox]:checked").each(function (index, colorElement) {
-        //     console.log(colorElement);
-        //     newColorArray.push($(colorElement).val());
-        // })
-
-        console.log("This is the colorGroup:", newColorArray);
-
-
-        $("#heightGroup");
-        let newHeightArray = [];
-        $("#heightGroup input[type=checkbox]:checked").each(function (index, heightElement) {
-            console.log(heightElement);
-            newHeightArray.push($(heightElement).val());
-        })
-
-        console.log("This is the heightGroup:", newHeightArray);
-
-
-        $("#bloomGroup");
-        let newBloomArray = [];
-        $("#bloomGroup input[type=checkbox]:checked").each(function (index, bloomElement) {
-            console.log(bloomElement);
-            newBloomArray.push($(bloomElement).val());
-        })
-
-        console.log("This is the bloomGroup:", newBloomArray);
-
-
-        $("#exposureGroup");
-        let newExposureArray = [];
-        $("#exposureGroup input[type=checkbox]:checked").each(function (index, exposureElement) {
-            console.log(exposureElement);
-            newExposureArray.push($(exposureElement).val());
-        })
-
-        console.log("This is the exposureGroup:", newExposureArray);
-
-
-        $("#cycleGroup");
-        let newCycleArray = [];
-        $("#cycleGroup input[type=checkbox]:checked").each(function (index, cycleElement) {
-            console.log(cycleElement);
-            newCycleArray.push($(cycleElement).val());
-        })
-
-        console.log("This is the cycleGroup:", newCycleArray);
-
-
-
-
+        //find the flowers that match the filter
         let colors = flowerPicks(newColorArray, "color");
         let height = flowerPicks(newHeightArray, "matureHeight");
         let bloom = flowerPicks(newBloomArray, "bloomTime");
         let exposure = flowerPicks(newExposureArray, "exposure");
-        let cycle = flowerPicks(newCycleArray, "lifecyle");
+        let cycle = flowerPicks(newCycleArray, "lifecycle");
         console.log("colors:", colors);
+
         //create an array to count the number of time a flower matches the filter
         let countOfMatches = new Array(plantList.length);
         //loop thru array to inialize the value to 0
@@ -121,7 +97,8 @@ $(function () {
         }
 
         if (matches == false) {
-            $(".noMatch").text("Sorry no matches,try again!")
+            $(".noMatch").text("Sorry no matches,try again!");
+            
         }
     });
 });
@@ -174,25 +151,25 @@ $(function () {
 //     console.log(colorMatches);
 // }
 
-function flowerPicks(flowerToFilter, thingsAboutFlowers) {
-    let flowerMatches = new Array(plantList.length);
-    for (let i = 0; i < plantList.length; i++) {
-        console.log(i);
-        let currentFlower = plantList[i];
-        for (let j = 0; j < currentFlower[thingsAboutFlowers].length; j++) {
-            console.log(currentFlower[thingsAboutFlowers][j]);
-            for (let k = 0; k < flowerToFilter.length; k++) {
-                if (flowerToFilter[k].toLowerCase() === currentFlower[thingsAboutFlowers][j].toLowerCase()) {
-                    flowerMatches[i] = true;
-                    console.log("The flower height is: ", currentFlower.type);
-                } else {
-                    console.log("Try Again!")
-                }
-            }
-        }
-    };
-    return flowerMatches
-}
+// function flowerPicks(flowerToFilter, flowerCharacteristics) {
+//     let flowerMatches = new Array(plantList.length);
+//     for (let i = 0; i < plantList.length; i++) {
+//         console.log(i);
+//         let currentFlower = plantList[i];
+//         for (let j = 0; j < currentFlower[flowerCharacteristics].length; j++) {
+//             console.log(currentFlower[flowerCharacteristics][j]);
+//             for (let k = 0; k < flowerToFilter.length; k++) {
+//                 if (flowerToFilter[k].toLowerCase() === currentFlower[flowerCharacteristics][j].toLowerCase()) {
+//                     flowerMatches[i] = true;
+//                     console.log("The flower height is: ", currentFlower.type);
+//                 } else {
+//                     console.log("Try Again!")
+//                 }
+//             }
+//         }
+//     };
+//     return flowerMatches
+// }
 
 // function flowerBloomPick(bloomToFilter) {
 //     let bloomMatches = new Array(plantList.length);

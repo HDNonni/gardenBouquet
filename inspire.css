@@ -1,0 +1,31 @@
+body, html{
+   box-sizing:border-box;
+   background-color: lightgray;
+}
+
+.imageSize{
+    display: block;
+    height:150px;
+    width:20%;
+    margin-left:auto;
+    margin-right:auto;
+}
+.blockquote{
+    opacity:0.6;
+    color: gray;
+}
+#flowerHeading{
+    padding-left:50px;
+    color: purple
+}
+.headingBack{
+    position: relative;
+    font-weight:bold;
+}
+.backImage{
+    position: absolute;
+    top:0;
+    height:100%;
+    width:100%;
+    opacity:0.5
+}

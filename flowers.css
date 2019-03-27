@@ -65,6 +65,8 @@ html body{
     color:lightgreen;
     font-size: 25px;
     text-align:center;
+    margin-top: 20px;
+    padding-top:10px;
 }
 .list-group li:first-child{
     color:white;

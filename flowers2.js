@@ -63,6 +63,7 @@ $(function () {
          //added below to test
         if (newCycleArray.length == 0) {
             alert("Please Pick from Lifecycle Group");
+            console.log("please pick from cycle group");
         }
 
 
@@ -91,7 +92,7 @@ $(function () {
         //if matches = at least 3 show pic and infoLink
         for (let i = 0; i < countOfMatches.length; i++) {
             //added to test
-            if (countOfMatches[i] >= 3 ) {
+            if (countOfMatches[i] >= 3 && newCycleArray != 0) {
                 console.log(plantList[i].type);
                 console.log(plantList[i].imageURL);
                 matches = true;

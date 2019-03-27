@@ -42,3 +42,17 @@ body, html{
     text-align: center;
     margin-top:15px;
 }
+.img-thumbnail{
+    width:400px;
+    margin-top:40px;
+    
+}
+/* .imageStyle{
+    display: flex;
+} */
+.top{
+    margin-left:80px;
+}
+.bottom{
+    margin-left:60px;
+}

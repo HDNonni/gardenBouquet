@@ -126,5 +126,9 @@ $(function () {
 })
 
 
-
+//TODO:
+//1. adjust filters for each attribute (ie. perenniels showing up when annual checked )
+//2. when lifecycle alert shows up it give message "Sorry ..." fix
+//3. work on inform page
+//4. create design page
 
